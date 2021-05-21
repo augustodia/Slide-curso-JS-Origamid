@@ -27,7 +27,8 @@ export default class Slide {
       this.dist.startX = event.changedTouches[0].clientX;
       moveType = 'touchmove';
     }
-    this.wrapper.addEventListener(moveType, this.onMove);
+    // Passei o {passive: true}, parou o erro ao mover.
+    this.wrapper.addEventListener(moveType, this.onMove, {passive: true});
   }
 
   onMove(event) {
@@ -45,7 +46,7 @@ export default class Slide {
   // Adiciona os eventos no wrapper
   addSlideEvents() {
     this.wrapper.addEventListener('mousedown', this.onStart);
-    this.wrapper.addEventListener('touchstart', this.onStart);
+    this.wrapper.addEventListener('touchstart', this.onStart, );
     this.wrapper.addEventListener('mouseup', this.onEnd);
     this.wrapper.addEventListener('touchend', this.onEnd);
   }
