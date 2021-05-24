@@ -93,8 +93,7 @@ export default class Slide {
   // Inicia o bind e adiciona os eventos
   init() {
     this.bindEvents();
-    this.slidesConfig()
-    console.log(this.slideArray);
+    this.slidesConfig();
     this.addSlideEvents();
     return this;
   }
